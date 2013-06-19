@@ -15,7 +15,7 @@ import (
 // INFO IN THE TO_RUN ARRAY!
 
 import (
-	_ "github.com/lib/pq"
+	_ "github.com/AlekSi/pq"
 	_ "github.com/ziutek/mymysql/godrv"
 )
 
@@ -414,7 +414,7 @@ func DoTestSaveDeleteAllAndHooks(t *testing.T, info dialectInfo) {
 		t.Fatal("wrong id", x)
 	}
 
-	hd.SaveAll(&models) // force update for hooks test 
+	hd.SaveAll(&models) // force update for hooks test
 
 	_, err = hd.DeleteAll(&models)
 	if err != nil {
